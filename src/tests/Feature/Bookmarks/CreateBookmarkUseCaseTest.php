@@ -27,7 +27,7 @@ class CreateBookmarkUseCaseTest extends TestCase
 
     public function testSaveCorrectData()
     {
-        // 念のため絶対に存在しないURL（example.comは使えないドメインなので）を使う
+        //aa 念のため絶対に存在しないURL（example.comは使えないドメssインなので）を使う
         $url = 'https://notfound.example.com/';
         $category = BookmarkCategory::query()->first()->id;
         $comment = 'テスト用のコメント';
@@ -61,19 +61,19 @@ class CreateBookmarkUseCaseTest extends TestCase
         // これまでと違ってMockeryというライブラリでモックを用意する
         $mock = \Mockery::mock(LinkPreviewInterface::class);
 
-        // 作ったモックがgetメソッドを実行したら必ず例外を投げるように仕込む
+        // 作ったexモックがgetメソッドを実行したら必ず例外を投げるように仕込む
         $mock->shouldReceive('get')
             ->withArgs([$url])
             ->andThrow(new \Exception('URLからメタ情報の取得に失敗'))
             ->once();
 
-        // サービスコンテナに$mockを使うように命令する
+        // サービスコンテナに$mockを使うように命令するeee
         $this->app->instance(
             LinkPreviewInterface::class,
             $mock
         );
 
-        // 例外が投げられることのテストは以下のように書く
+        // 例外が投げられることのテストは以下のように書くaqss
         $this->expectException(ValidationException::class);
         $this->expectExceptionObject(ValidationException::withMessages([
             'url' => 'URLが存在しない等の理由で読み込めませんでした。変更して再度投稿してください'
