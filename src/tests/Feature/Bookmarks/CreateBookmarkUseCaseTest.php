@@ -27,7 +27,7 @@ class CreateBookmarkUseCaseTest extends TestCase
 
     public function testSaveCorrectData()
     {
-        // 念のため絶対に存在しないURL（example.comは使えないドメインなので）を使う
+        // 念のため絶対に存在しないURL（example.comは使えないドメssインなので）を使う
         $url = 'https://notfound.example.com/';
         $category = BookmarkCategory::query()->first()->id;
         $comment = 'テスト用のコメント';
