@@ -61,7 +61,7 @@ class CreateBookmarkUseCaseTest extends TestCase
         // これまでと違ってMockeryというライブラリでモックを用意する
         $mock = \Mockery::mock(LinkPreviewInterface::class);
 
-        // 作ったモックがgetメソッドを実行したら必ず例外を投げるように仕込む
+        // 作ったexモックがgetメソッドを実行したら必ず例外を投げるように仕込む
         $mock->shouldReceive('get')
             ->withArgs([$url])
             ->andThrow(new \Exception('URLからメタ情報の取得に失敗'))
