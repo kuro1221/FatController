@@ -67,7 +67,7 @@ class CreateBookmarkUseCaseTest extends TestCase
             ->andThrow(new \Exception('URLからメタ情報の取得に失敗'))
             ->once();
 
-        // サービスコンテナに$mockを使うように命令する
+        // サービスコンテナに$mockを使うように命令するeee
         $this->app->instance(
             LinkPreviewInterface::class,
             $mock
