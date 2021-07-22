@@ -73,7 +73,7 @@ class CreateBookmarkUseCaseTest extends TestCase
             $mock
         );
 
-        // 例外が投げられることのテストは以下のように書く
+        // 例外が投げられることのテストは以下のように書くaqss
         $this->expectException(ValidationException::class);
         $this->expectExceptionObject(ValidationException::withMessages([
             'url' => 'URLが存在しない等の理由で読み込めませんでした。変更して再度投稿してください'
