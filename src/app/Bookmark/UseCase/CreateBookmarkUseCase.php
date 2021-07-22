@@ -38,7 +38,7 @@ final class CreateBookmarkUseCase
     {
         // 下記のサービスでも同様のことが実現できる
         // @see https://www.linkpreview.net/
-        //修正
+        //修正e
         $previewClient = new Client($url);
         try {
             $preview = $this->linkPreview->get($url);
